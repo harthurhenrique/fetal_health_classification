@@ -1,0 +1,20 @@
+# Arquivos de Sistema e Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+venv/
+env/
+
+# Datasets (Não suba seus dados!)
+*.csv
+*.xlsx
+*.parquet
+
+# MLflow (Logs locais costumam ser pesados ou irrelevantes para o remoto)
+mlruns/
+.trash/
+
+# IDEs
+.vscode/
+.idea/
