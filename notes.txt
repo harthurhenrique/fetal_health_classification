@@ -1,3 +1,0 @@
-não tem nulos
-todas variaveis são numericas tupo float
-classes desbalanceadas

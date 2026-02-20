@@ -12,7 +12,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import confusion_matrix
 
 
-df_base = pd.read_csv('src/fetal_health.csv')
+df_base = pd.read_csv('src/data/fetal_health.csv')
 
 X = df_base.drop('fetal_health', axis=1)
 y  = df_base['fetal_health']
