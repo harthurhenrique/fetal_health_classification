@@ -16,11 +16,13 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import (confusion_matrix, f1_score, accuracy_score, recall_score, 
                              precision_score, roc_auc_score)
 
-flag_pipeline_treino = 0
+flag_pipeline_treino = 1
 #0: Pipeline do Naive Bayes
 #1: Pipeline do SVM e Decision tree
 
 df_base = pd.read_csv('src/data/fetal_health.csv')
+df_base = df_base.drop(columns=['prolongued_decelerations', 'severe_decelerations', 'histogram_number_of_zeroes'])
+
 
 X = df_base.drop('fetal_health', axis=1)
 y  = df_base['fetal_health']
@@ -37,10 +39,10 @@ pipelines = {
     ]),
     "Decision Tree (Entropy)": Pipeline([
         ('model', DecisionTreeClassifier(criterion='entropy', class_weight='balanced', random_state=42))
-    ]),
-    "Naive Bayes": Pipeline([
-        ('model', GaussianNB()) 
     ])
+    # "Naive Bayes": Pipeline([
+    #     ('model', GaussianNB()) 
+    # ])
 
 }
 
